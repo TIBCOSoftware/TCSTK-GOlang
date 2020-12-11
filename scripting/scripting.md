@@ -159,5 +159,4 @@ feedback := input / 2
 ```
 > <i>^ Eval support only simple calculations, and loops, but no 'if', so I recommend to stick with just calculations.</i>
 
-<hr>
-<sub><b>Note:</b> more TCI Extensions can be found here: [https://tibcosoftware.github.io/tci-awesome/](https://tibcosoftware.github.io/tci-awesome/) </sub>
+
