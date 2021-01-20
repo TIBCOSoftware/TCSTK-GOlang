@@ -1,0 +1,60 @@
+{
+    "name": "flogo-tibcocloud-authenticate",
+    "type": "flogo:activity",
+    "author": "Manuel Carlos Rodriguez",
+    "version": "0.1.0",
+    "title": "Authenticate",
+    "description": "Authenticate in TIBCO Cloud and obtain TSC and Domain cookies.",
+    "display": {
+        "category": "tibcocloud",
+        "visible": true,
+        "description": "This activity generate a hash base on the provided data"
+    },
+    "ref": "github.com/TIBCOSoftware/TCSTK-GOlang/tibcocloud/activity/authenticate",
+    "settings": [],
+    "input": [
+        {
+            "name": "region",
+            "type": "string",
+            "description": "Allowed values are EU, APAC and US. Default region is US.",
+            "required": true
+        },
+        {
+            "name": "tenant",
+            "type": "string",
+            "description": "Allowed values are empty string, bpm, ....",
+            "required": true
+        },
+        {
+            "name": "username",
+            "type": "string",
+            "description": "",
+            "required": true
+        },
+        {
+            "name": "password",
+            "type": "string",
+            "description": "",
+            "required": true
+        },
+        {
+            "name": "clientID",
+            "type": "string",
+            "description": "",
+            "required": false
+        },        
+        {
+            "name": "version",
+            "type": "string",
+            "description": "Allowed values are V2 and V3.",
+            "required": true
+        }
+    ],
+    "output": [
+        {
+            "name": "cookie",
+            "type": "object",
+            "value": "{\"tsc\": \"tsc cookie value\", \"domain\": \"domain cookie value\", \"region\": \"region for the cookies\"}"
+        }
+    ]
+}
