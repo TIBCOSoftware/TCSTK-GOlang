@@ -7,7 +7,7 @@
 package authenticate
 
 import (
-	"github.com/TIBCOSoftware/TCSTK-common-mods/tibcocloud/idm"
+	"github.com/TIBCOSoftware/TCSTK-GOlang/tibcocloud/idm"
 	"github.com/project-flogo/core/activity"
 )
 
