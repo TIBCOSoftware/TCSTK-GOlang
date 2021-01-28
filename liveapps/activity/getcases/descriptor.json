@@ -1,0 +1,105 @@
+{
+    "name": "getCases",
+    "author": "Manuel Carlos Rodriguez",
+    "version": "1.0.0",
+    "type": "flogo:activity",
+    "title": "Get Cases",
+    "display": {
+        "description": "Activities created by TIBCO Labs",
+        "category": "liveapps",
+        "visible": true,
+        "smallIcon": "ifttt.png"
+    },
+    "feature": {
+        "iterator": {
+            "type": "iterator",
+            "enabled": true
+        }
+    },
+    "ref": "github.com/TIBCOSoftware/TCSTK-GOlang/liveapps/activity/getcases",
+    "settings": [
+        {
+            "name": "security",
+            "type": "string",
+            "required": true,
+            "display": {
+                "name": "Security",
+                "description": "The REST method used for the requests",
+                "type": "dropdown",
+                "selection": "single"
+            },
+            "allowed": [
+                "Cookie",
+                "AccessToken"
+            ],
+            "value": "Cookie"
+        }
+    ],
+    "inputs": [
+        {
+            "name": "region",
+            "type": "string",
+            "required": true,
+            "value": ""
+        },
+        {
+            "name": "cookie",
+            "type": "object",
+            "value": "{\"tsc\": \"tsc cookie value\", \"domain\": \"domain cookie value\"}",
+            "required": false
+        },
+        {
+            "name": "accessToken",
+            "type": "string",
+            "required": false,
+            "visible": false
+        },
+        {
+            "name": "sandboxId",
+            "type": "string",
+            "value": ""
+        },
+        {
+            "name": "filter",
+            "type": "string",
+            "value": ""
+        },
+        {
+            "name": "select",
+            "type": "string",
+            "value": ""
+        },
+        {
+            "name": "skip",
+            "type": "string",
+            "value": ""
+        },
+        {
+            "name": "top",
+            "type": "string",
+            "value": ""
+        },
+        {
+            "name": "search",
+            "type": "string",
+            "value": ""
+        },
+        {
+            "name": "count",
+            "type": "boolean",
+            "value": false
+        },
+        {
+            "name": "user",
+            "type": "string",
+            "value": ""
+        }
+    ],
+    "outputs": [
+        {
+            "name": "getCaseResponseItem",
+            "type": "array",
+            "value": "{\"$schema\": \"http:\/\/json-schema.org\/draft-07\/schema\",\"$id\": \"http:\/\/example.com\/example.json\",\"type\": \"array\",\"items\": {\"$id\": \"#\/items\",\"type\": \"object\",\"properties\": {\"caseReference\": {\"$id\": \"#\/items\/properties\/caseReference\",\"type\": \"string\"},\"caseData\": {\"$id\": \"#\/items\/properties\/caseData\",\"type\": \"string\"},\"untaggedCasedata\": {\"$id\": \"#\/items\/properties\/untaggedCasedata\",\"type\": \"string\"},\"summary\": {\"$id\": \"#\/items\/properties\/summary\",\"type\": \"string\"},\"metadata\": {\"$id\": \"#\/items\/properties\/metadata\",\"type\": \"object\",\"properties\": {\"createdBy\": {\"$id\": \"#\/items\/properties\/metadata\/properties\/createdBy\",\"type\": \"string\"},\"creationTimestamp\": {\"$id\": \"#\/items\/properties\/metadata\/properties\/creationTimestamp\",\"type\": \"string\"},\"modifiedBy\": {\"$id\": \"#\/items\/properties\/metadata\/properties\/modifiedBy\",\"type\": \"string\"},\"modificationTimestamp\": {\"$id\": \"#\/items\/properties\/metadata\/properties\/modificationTimestamp\",\"type\": \"string\"},\"lock\": {\"$id\": \"#\/items\/properties\/metadata\/properties\/lock\",\"type\": \"boolean\"},\"lockType\": {\"$id\": \"#\/items\/properties\/metadata\/properties\/lockType\",\"type\": \"string\"},\"lockedBy\": {\"$id\": \"#\/items\/properties\/metadata\/properties\/lockedBy\",\"type\": \"string\"},\"msLockExpiry\": {\"$id\": \"#\/items\/properties\/metadata\/properties\/msLockExpiry\",\"type\": \"string\"},\"msSystemTime\": {\"$id\": \"#\/items\/properties\/metadata\/properties\/msSystemTime\",\"type\": \"string\"},\"markedForPurge\": {\"$id\": \"#\/items\/properties\/metadata\/properties\/markedForPurge\",\"type\": \"boolean\"},\"applicationId\": {\"$id\": \"#\/items\/properties\/metadata\/properties\/applicationId\",\"type\": \"string\"},\"typeId\": {\"$id\": \"#\/items\/properties\/metadata\/properties\/typeId\",\"type\": \"string\"}}}}}}"
+        }
+    ]
+}
