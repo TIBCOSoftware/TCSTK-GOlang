@@ -1,0 +1,108 @@
+{
+    "name": "startCase",
+    "author": "Manuel Carlos Rodriguez",
+    "version": "1.0.0",
+    "type": "flogo:activity",
+    "title": "Start a Case",
+    "display": {
+        "description": "Activities created by TIBCO Labs",
+        "category": "liveapps",
+        "visible": true,
+        "smallIcon": "ifttt.png"
+    },
+    "feature": {
+        "iterator": {
+            "type": "iterator",
+            "enabled": true
+        }
+    },
+    "ref": "github.com/TIBCOSoftware/TCSTK-GOlang/liveapps/activity/startcase",
+    "settings": [
+        {
+            "name": "security",
+            "type": "string",
+            "required": true,
+            "display": {
+                "name": "Security",
+                "description": "The REST method used for the requests",
+                "type": "dropdown",
+                "selection": "single"
+            },
+            "allowed": [
+                "Cookie",
+                "AccessToken"
+            ],
+            "value": "Cookie"
+        }
+    ],
+    "inputs": [
+        {
+            "name": "region",
+            "type": "string",
+            "required": true,
+            "value": ""
+        },
+        {
+            "name": "cookie",
+            "type": "object",
+            "value": "{\"tsc\": \"tsc cookie value\", \"domain\": \"domain cookie value\"}",
+            "required": false
+        },
+        {
+            "name": "accessToken",
+            "type": "string",
+            "required": false,
+            "visible": false
+        },
+        {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "value": ""
+        },
+        {
+            "name": "applicationId",
+            "type": "string",
+            "required": true,
+            "value": ""
+        },
+        {
+            "name": "sandboxId",
+            "type": "string",
+            "required": true,
+            "value": ""
+        },
+        {
+            "name": "data",
+            "type": "string",
+            "required": true,
+            "value": ""
+        }
+    ],
+    "outputs": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "applicationId",
+            "type": "string"
+        },
+        {
+            "name": "sandboxId",
+            "type": "string"
+        },
+        {
+            "name": "caseReference",
+            "type": "string"
+        },
+        {
+            "name": "caseIdentifier",
+            "type": "string"
+        },
+        {
+            "name": "data",
+            "type": "string"
+        }
+    ]
+}
