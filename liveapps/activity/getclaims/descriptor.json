@@ -1,0 +1,74 @@
+{
+    "name": "getClaims",
+    "author": "Manuel Carlos Rodriguez",
+    "version": "1.0.0",
+    "type": "flogo:activity",
+    "title": "Get Claims",
+    "display": {
+        "description": "Activities created by TIBCO Labs",
+        "category": "liveapps",
+        "visible": true,
+        "smallIcon": "ifttt.png"
+    },
+    "feature": {
+        "iterator": {
+            "type": "iterator",
+            "enabled": true
+        }
+    },
+    "ref": "github.com/TIBCOSoftware/TCSTK-GOlang/liveapps/activity/getclaims",
+    "settings": [
+        {
+            "name": "security",
+            "type": "string",
+            "required": true,
+            "display": {
+                "name": "Security",
+                "description": "The REST method used for the requests",
+                "type": "dropdown",
+                "selection": "single"
+            },
+            "allowed": [
+                "Cookie",
+                "AccessToken"
+            ],
+            "value": "Cookie"
+        }
+    ],
+    "inputs": [
+        {
+            "name": "region",
+            "type": "string",
+            "required": true,
+            "value": ""
+        },
+        {
+            "name": "cookie",
+            "type": "object",
+            "value": "{\"tsc\": \"tsc cookie value\", \"domain\": \"domain cookie value\"}",
+            "required": false
+        },
+        {
+            "name": "accessToken",
+            "type": "string",
+            "required": false,
+            "visible": false
+        }
+    ],
+    "outputs": [
+        {
+            "name": "statusCode",
+            "type": "number"
+        },
+        {
+            "name": "claims",
+            "type": "object",
+            "value": "{\"$schema\": \"http://json-schema.org/draft-04/schema#\",\"type\": \"object\",\"properties\": {\"subscriptionId\": {\"type\": \"string\"},\"firstName\": {\"type\": \"string\"},\"lastName\": {\"type\": \"string\"},\"username\": {\"type\": \"string\"},\"email\": {\"type\": \"string\"},\"status\": {\"items\": {\"type\": \"string\"},\"type\": \"array\"},\"sandboxes\": {\"items\": {\"type\": \"object\",\"properties\": {\"id\": {\"type\": \"string\"},\"type\": {\"type\": \"string\"},\"groups\": {\"items\": {\"type\": \"object\",\"properties\": {\"id\": {\"type\": \"string\"},\"type\": {\"type\": \"string\"}}},\"type\": \"array\"}}},\"type\": \"array\"},\"id\": {\"type\": \"string\"}}}"
+        },
+        {
+            "name": "error",
+            "type": "object",
+            "value": "{\"$schema\": \"http:\/\/json-schema.org\/draft-04\/schema#\",\"type\": \"object\",\"properties\": {\"errorMsg\": {\"type\": \"string\"},\"errorCode\": {\"type\": \"string\"},\"stackTrace\": {\"type\": \"string\"},\"contextAttributes\": {\"type\": \"array\",\"items\": {\"type\": \"object\",\"properties\": {\"name\": {\"type\": \"string\"},\"value\": {\"type\": \"string\"}}}}}}"
+        }
+    ]
+}
