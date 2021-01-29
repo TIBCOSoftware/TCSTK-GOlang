@@ -18,7 +18,7 @@ to install e.g. the JavaScript Activity use in the Flogo Extension Upload UI:
 > github.com/TIBCOSoftware/TCSTK-GOlang/scripting/activity/execjs
 
 ## Source
-All Source on GitHub here: [github.com/TIBCOSoftware/TCST-GOlang/scripting](https://github.com/TIBCOSoftware/TCST-GOlang/scripting)
+All Source on GitHub here: [https://github.com/TIBCOSoftware/TCSTK-GOlang/tree/master/scripting/activity](https://github.com/TIBCOSoftware/TCSTK-GOlang/tree/master/scripting/activity)
 
 ## Activities
 The first JavaScript Extension is the most Advanced Option here as it supports longer Scripts.
