@@ -8,7 +8,7 @@
         "description": "Activities created by TIBCO Labs",
         "category": "liveapps",
         "visible": true,
-        "smallIcon": "ifttt.png"
+        "smallIcon": "../../icons/ic-la.png"
     },
     "feature": {
         "iterator": {
