@@ -12,6 +12,11 @@ Thanks to ... [https://github.com/novalagung/golpal](https://github.com/novalagu
 3. You can find a experimental Version for one line GO Eval, too. But this really just a working draft.
 Thanks to ... [https://github.com/xtaci/goeval](https://github.com/xtaci/goeval) 
 
+## Install URL
+to install e.g. the JavaScript Activity use in the Flogo Extension Upload UI:
+
+> github.com/TIBCOSoftware/TCSTK-GOlang/scripting/activity/execjs
+
 ## Source
 All Source on GitHub here: [github.com/TIBCOSoftware/TCST-GOlang/scripting/src](https://github.com/TIBCOSoftware/TCST-GOlang/scripting/src)
 
