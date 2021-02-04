@@ -3,7 +3,9 @@ TIBCO Cloud Integration Flogo custom Live Apps activity.
 
 ## Overview
 These activites allow you to connect to any TIBCO Cloud Live Apps Subscription, and perform a growing number actions.
-Have a look on the standard API documentation to get more details about the here used API calls
+Have a look on the standard API documentation to get more details about the here used API calls.
+
+> Note: the standard Live Apps Flogo Extension that comes with TIBCO Cloud Integration just allows to connect to the same Subscription Live Apps Applications.  
 
 ## Install URL
 to install e.g. the JavaScript Activity use in the Flogo Extension Upload UI:
@@ -24,3 +26,30 @@ create a new case instance in a Live Apps Application
 
 ### Get Cases
 query for existing cases of an Live Apps Subscription and return a single case, or a filtered list. 
+
+## What's next
+more to come soon, we have already over 20 more activities ready to release soon:
+
+- getworkitem
+- getworklistitems
+- openworkitem
+- completeworkitem
+- putworkitem
+- createstate
+- deletecases
+- deleteusergroupmappingsid
+- getartifact
+- getgroups
+- getinstances
+- getinstancestates
+- getstates
+- gettypes
+- getusergroupmappings
+- getusers
+- postcaseactions
+- postnotes
+- postusergroupmappings
+- putinstancestates
+- runaction
+- updatestates
+- uploadartifact
