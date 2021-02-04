@@ -70,7 +70,7 @@ here some first sample Scripts to how it works, more can be found in 'logicscrip
 
 Sample Input Data
 - Input "some data"
-- ScriptURL "https://raw.githubusercontent.com/TIBCOSoftware/TCST-GOlang/master/scripting/logicscripts/dynconcatsample.js"
+- ScriptURL "https://raw.githubusercontent.com/TIBCOSoftware/TCSTK-GOlang/master/scripting/logicscripts/dynconcatsample.js"
 
 Sample Output Data
 - Output = "Input: some data"
@@ -83,7 +83,7 @@ feedback;
 
 Sample Input Data
 - Input "green"
-- ScriptURL "https://raw.githubusercontent.com/TIBCOSoftware/TCST-GOlang/master/scripting/logicscripts/dynifsample.js"
+- ScriptURL "https://raw.githubusercontent.com/TIBCOSoftware/TCSTK-GOlang/master/scripting/logicscripts/dynifsample.js"
 
 Sample Output Data
 - Output = "25"
@@ -104,7 +104,7 @@ feedback;
 
 Sample Input Data with complex JSON
 - Input "{\"data\":\"green\"}"
-- ScriptURL "https://raw.githubusercontent.com/TIBCOSoftware/TCST-GOlang/master/scripting/logicscripts/dynifsamplecomplex.js"
+- ScriptURL "https://raw.githubusercontent.com/TIBCOSoftware/TCSTK-GOlang/master/scripting/logicscripts/dynifsamplecomplex.js"
 
 Sample Output Data
 - Output = "25"
@@ -130,7 +130,7 @@ feedback;
 
 Sample Input Data
 - Input "green"
-- ScriptURL "https://raw.githubusercontent.com/TIBCOSoftware/TCST-GOlang/master/scripting/logicscripts/dynifsample.go"
+- ScriptURL "https://raw.githubusercontent.com/TIBCOSoftware/TCSTK-GOlang/master/scripting/logicscripts/dynifsample.go"
 
 Sample Output Data
 - Output = "25"
@@ -154,7 +154,7 @@ return feedback
 
 Sample Input Data
 - Input 50
-- ScriptURL "https://raw.githubusercontent.com/TIBCOSoftware/TCST-GOlang/master/scripting/logicscripts/simplecalc.go"
+- ScriptURL "https://raw.githubusercontent.com/TIBCOSoftware/TCSTK-GOlang/master/scripting/logicscripts/simplecalc.go"
 
 Sample Output Data
 - Output = "25"
