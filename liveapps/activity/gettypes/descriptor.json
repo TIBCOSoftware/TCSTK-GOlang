@@ -1,0 +1,96 @@
+{
+    "name": "getTypes",
+    "author": "Manuel Carlos Rodriguez",
+    "version": "1.0.0",
+    "type": "flogo:activity",
+    "title": "Get Types",
+    "display": {
+        "description": "Activities created by TIBCO Labs",
+        "category": "liveapps",
+        "visible": true,
+        "smallIcon": "ic-la.png"
+    },
+    "feature": {
+        "iterator": {
+            "type": "iterator",
+            "enabled": true
+        }
+    },
+    "ref": "github.com/TIBCOSoftware/TCSTK-GOlang/liveapps/activity/gettypes",
+    "settings": [
+        {
+            "name": "security",
+            "type": "string",
+            "required": true,
+            "display": {
+                "name": "Security",
+                "description": "The REST method used for the requests",
+                "type": "dropdown",
+                "selection": "single"
+            },
+            "allowed": [
+                "Cookie",
+                "AccessToken"
+            ],
+            "value": "Cookie"
+        }
+    ],
+    "inputs": [
+        {
+            "name": "region",
+            "type": "string",
+            "required": true,
+            "value": ""
+        },
+        {
+            "name": "cookie",
+            "type": "object",
+            "value": "{\"tsc\": \"tsc cookie value\", \"domain\": \"domain cookie value\"}",
+            "required": false
+        },
+        {
+            "name": "accessToken",
+            "type": "string",
+            "required": false,
+            "visible": false
+        },
+        {
+            "name": "sandboxId",
+            "type": "string",
+            "required": true,
+            "value": ""
+        },
+        {
+            "name": "select",
+            "type": "string",
+            "value": ""
+        },
+        {
+            "name": "filter",
+            "type": "string",
+            "value": ""
+        },
+        {
+            "name": "skip",
+            "type": "string",
+            "value": ""
+        },
+        {
+            "name": "top",
+            "type": "string",
+            "value": ""
+        },
+        {
+            "name": "count",
+            "type": "boolean",
+            "value": false
+        }
+    ],
+    "outputs": [
+        {
+            "name": "typeResponseItems",
+            "type": "array",
+            "value": "{\"$schema\": \"http:\/\/json-schema.org\/draft-07\/schema\",\"$id\": \"http:\/\/example.com\/example.json\",\"type\": \"array\",\"items\": {\"$id\": \"#\/items\",\"type\": \"object\",\"properties\": {\"id\": {\"$id\": \"#\/items\/properties\/id\",\"type\": \"string\"},\"name\": {\"$id\": \"#\/items\/properties\/name\",\"type\": \"string\"},\"label\": {\"$id\": \"#\/items\/properties\/label\",\"type\": \"string\"},\"isCase\": {\"$id\": \"#\/items\/properties\/isCase\",\"type\": \"boolean\"},\"applicationId\": {\"$id\": \"#\/items\/properties\/applicationId\",\"type\": \"string\"},\"applicationName\": {\"$id\": \"#\/items\/properties\/applicationName\",\"type\": \"string\"},\"applicationInternalName\": {\"$id\": \"#\/items\/properties\/applicationInternalName\",\"type\": \"string\"},\"applicationVersion\": {\"$id\": \"#\/items\/properties\/applicationVersion\",\"type\": \"integer\"},\"attributes\": {\"$id\": \"#\/items\/properties\/attributes\",\"type\": \"array\",\"items\": {\"$id\": \"#\/items\/properties\/attributes\/items\",\"type\": \"object\",\"properties\": {\"name\": {\"$id\": \"#\/items\/properties\/attributes\/items\/properties\/name\",\"type\": \"string\"},\"label\": {\"$id\": \"#\/items\/properties\/attributes\/items\/properties\/label\",\"type\": \"string\"},\"type\": {\"$id\": \"#\/items\/properties\/attributes\/items\/properties\/type\",\"type\": \"string\"},\"isStructuredType\": {\"$id\": \"#\/items\/properties\/attributes\/items\/properties\/isStructuredType\",\"type\": \"boolean\"},\"isIdentifier\": {\"$id\": \"#\/items\/properties\/attributes\/items\/properties\/isIdentifier\",\"type\": \"boolean\"},\"isState\": {\"$id\": \"#\/items\/properties\/attributes\/items\/properties\/isState\",\"type\": \"boolean\"},\"isArray\": {\"$id\": \"#\/items\/properties\/attributes\/items\/properties\/isArray\",\"type\": \"boolean\"},\"isMandatory\": {\"$id\": \"#\/items\/properties\/attributes\/items\/properties\/isMandatory\",\"type\": \"boolean\"},\"constraints\": {\"$id\": \"#\/items\/properties\/attributes\/items\/properties\/constraints\",\"type\": \"object\",\"properties\": {\"decimalPlaces\": {    \"$id\": \"#\/items\/properties\/attributes\/items\/properties\/constraints\/properties\/decimalPlaces\",    \"type\": \"integer\"}}},\"displayPreferences\": {\"$id\": \"#\/items\/properties\/attributes\/items\/properties\/displayPreferences\",\"type\": \"object\",\"properties\": {\"multiLine\": {    \"$id\": \"#\/items\/properties\/attributes\/items\/properties\/displayPreferences\/properties\/multiLine\",    \"type\": \"boolean\"},\"prefix\": {    \"$id\": \"#\/items\/properties\/attributes\/items\/properties\/displayPreferences\/properties\/prefix\",    \"type\": \"string\"},\"suffix\": {    \"$id\": \"#\/items\/properties\/attributes\/items\/properties\/displayPreferences\/properties\/suffix\",    \"type\": \"string\"}}}}}},\"summaryAttributes\": {\"$id\": \"#\/items\/properties\/summaryAttributes\",\"type\": \"array\",\"items\": {\"$id\": \"#\/items\/properties\/summaryAttributes\/items\",\"type\": \"object\",\"properties\": {\"name\": {\"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/name\",\"type\": \"string\"},\"label\": {\"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/label\",\"type\": \"string\"},\"type\": {\"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/type\",\"type\": \"string\"},\"isStructuredType\": {\"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/isStructuredType\",\"type\": \"boolean\"},\"isIdentifier\": {\"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/isIdentifier\",\"type\": \"boolean\"},\"isState\": {\"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/isState\",\"type\": \"boolean\"},\"isArray\": {\"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/isArray\",\"type\": \"boolean\"},\"isMandatory\": {\"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/isMandatory\",\"type\": \"boolean\"},\"constraints\": {\"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/constraints\",\"type\": \"object\",\"properties\": {\"decimalPlaces\": {    \"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/constraints\/properties\/decimalPlaces\",    \"type\": \"integer\"}}},\"displayPreferences\": {\"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/displayPreferences\",\"type\": \"object\",\"properties\": {\"multiLine\": {    \"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/displayPreferences\/properties\/multiLine\",    \"type\": \"boolean\"},\"prefix\": {    \"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/displayPreferences\/properties\/prefix\",    \"type\": \"string\"},\"suffix\": {    \"$id\": \"#\/items\/properties\/summaryAttributes\/items\/properties\/displayPreferences\/properties\/suffix\",    \"type\": \"string\"}}}}}},\"states\": {\"$id\": \"#\/items\/properties\/states\",\"type\": \"array\",\"items\": {\"$id\": \"#\/items\/properties\/states\/items\",\"type\": \"object\",\"properties\": {\"id\": {\"$id\": \"#\/items\/properties\/states\/items\/properties\/id\",\"type\": \"string\"},\"label\": {\"$id\": \"#\/items\/properties\/states\/items\/properties\/label\",\"type\": \"string\"},\"value\": {\"$id\": \"#\/items\/properties\/states\/items\/properties\/value\",\"type\": \"string\"},\"isTerminal\": {\"$id\": \"#\/items\/properties\/states\/items\/properties\/isTerminal\",\"type\": \"boolean\"}}}},\"jsonSchema\": {\"$id\": \"#\/items\/properties\/jsonSchema\",\"type\": \"object\"},\"creators\": {\"$id\": \"#\/items\/properties\/creators\",\"type\": \"array\",\"items\": {\"$id\": \"#\/items\/properties\/creators\/items\",\"type\": \"object\",\"properties\": {\"id\": {\"$id\": \"#\/items\/properties\/creators\/items\/properties\/id\",\"type\": \"string\"},\"name\": {\"$id\": \"#\/items\/properties\/creators\/items\/properties\/name\",\"type\": \"string\"},\"jsonSchema\": {\"$id\": \"#\/items\/properties\/creators\/items\/properties\/jsonSchema\",\"type\": \"object\"}}}},\"actions\": {\"$id\": \"#\/items\/properties\/actions\",\"type\": \"array\",\"items\": {\"$id\": \"#\/items\/properties\/actions\/items\",\"type\": \"object\",\"properties\": {\"id\": {\"$id\": \"#\/items\/properties\/actions\/items\/properties\/id\",\"type\": \"string\"},\"name\": {\"$id\": \"#\/items\/properties\/actions\/items\/properties\/name\",\"type\": \"string\"},\"jsonSchema\": {\"$id\": \"#\/items\/properties\/actions\/items\/properties\/jsonSchema\",\"type\": \"object\"}}}}}}}"
+        }
+    ]
+}
