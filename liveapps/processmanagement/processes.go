@@ -7,14 +7,14 @@
 package processmanagement
 
 import (
-	"github.com/TIBCOSoftware/TCSTK-GOlang/tibcocloud/idm"
 	"github.com/TIBCOSoftware/TCSTK-common-mods/utils/rest"
+	"github.com/TIBCOSoftware/TCSTK-common-mods/utils/server"
 )
 
 // PostProcesses Creates an instance of a specified Case Creator or Case Action process.
 func PostProcesses(region string, authentication interface{}, body ProcessDetails) (statusCode int, responseOK ProcessDetails, responseKO Error, err error) {
 	request := rest.Input{
-		URL:            idm.GetServer(region, "bpm") + ProcessManagementV1 + "/processes",
+		URL:            server.GetServer(region, "bpm") + ProcessManagementV1 + "/processes",
 		HTTPMethod:     "POST",
 		ContentType:    "application/json",
 		Authentication: authentication,
