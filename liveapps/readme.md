@@ -27,6 +27,12 @@ create a new case instance in a Live Apps Application
 ### Get Cases
 query for existing cases of an Live Apps Subscription and return a single case, or a filtered list. 
 
+### Get Artifact
+download an asset from a Case folder e.g. an PDF
+
+### Upload Artifact
+upload an asset to a Case folder e.g. an PDF
+
 ## What's next
 more to come soon, we have already over 20 more activities ready to release soon:
 
@@ -38,7 +44,6 @@ more to come soon, we have already over 20 more activities ready to release soon
 - createstate
 - deletecases
 - deleteusergroupmappingsid
-- getartifact
 - getgroups
 - getinstances
 - getinstancestates
@@ -52,4 +57,3 @@ more to come soon, we have already over 20 more activities ready to release soon
 - putinstancestates
 - runaction
 - updatestates
-- uploadartifact
