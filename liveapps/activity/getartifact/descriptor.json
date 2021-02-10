@@ -1,0 +1,113 @@
+{
+    "name": "getArtifact",
+    "author": "Manuel Carlos Rodriguez",
+    "version": "1.0.0",
+    "type": "flogo:activity",
+    "title": "Get an artifact",
+    "display": {
+        "description": "Activities created by TIBCO Labs",
+        "category": "liveapps",
+        "visible": true,
+        "smallIcon": "ic-la.png"
+    },
+    "feature": {
+        "iterator": {
+            "type": "iterator",
+            "enabled": true
+        }
+    },
+    "ref": "github.com/TIBCOSoftware/TCSTK-GOlang/liveapps/activity/getartifact",
+    "settings": [
+        {
+            "name": "security",
+            "type": "string",
+            "required": true,
+            "display": {
+                "name": "Security",
+                "description": "The REST method used for the requests",
+                "type": "dropdown",
+                "selection": "single"
+            },
+            "allowed": [
+                "Cookie",
+                "AccessToken"
+            ],
+            "value": "Cookie"
+        },
+        {
+            "name": "folderType",
+            "type": "string",
+            "required": true,
+            "display": {
+                "name": "Folder type",
+                "description": "Folder type to get the artifact",
+                "type": "dropdown",
+                "selection": "single"
+            },
+            "allowed": [
+                "Case folder",
+                "Org folder"
+            ],
+            "value": "Case folder"
+        }
+    ],
+    "inputs": [
+        {
+            "name": "region",
+            "type": "string",
+            "required": true,
+            "value": ""
+        },
+        {
+            "name": "cookie",
+            "type": "object",
+            "value": "{\"tsc\": \"tsc cookie value\", \"domain\": \"domain cookie value\"}",
+            "required": false
+        },
+        {
+            "name": "accessToken",
+            "type": "string",
+            "required": false,
+            "visible": false
+        },
+        {
+            "name": "folderName",
+            "type": "string",
+            "required": true
+        },
+        {
+            "name": "artifactName",
+            "type": "string",
+            "required": true
+        },
+        {
+            "name": "sandboxId",
+            "type": "string",
+            "required": true
+        },
+        {
+            "name": "version",
+            "type": "string",
+            "required": false
+        }
+    ],
+    "outputs": [
+        {
+            "name": "statusCode",
+            "type": "number"
+        },
+        {
+            "name": "contentType",
+            "type": "string"
+        },
+        {
+            "name": "content",
+            "type": "string"
+        },
+        {
+            "name": "error",
+            "type": "object",
+            "value": "{\"type\": \"object\",\"properties\": {\"errorMsg\": {\"type\": \"string\"},\"errorCode\": {\"type\": \"string\"},\"stactTrace\": {\"type\": \"string\"},\"contextAttribute\": {\"type\": \"array\",\"items\": {\"type\": \"object\",\"properties\": {\"name\": {\"type\": \"string\"},\"value\": {\"type\": \"string\"}}}}}}"
+        }
+    ]
+}
