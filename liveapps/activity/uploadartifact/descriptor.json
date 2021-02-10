@@ -1,0 +1,99 @@
+{
+    "name": "uploadArtifact",
+    "author": "Manuel Carlos Rodriguez",
+    "version": "1.0.0",
+    "type": "flogo:activity",
+    "title": "Upload an artifact",
+    "display": {
+        "description": "Activities created by TIBCO Labs",
+        "category": "liveapps",
+        "visible": true,
+        "smallIcon": "ic-la.png"
+    },
+    "feature": {
+        "iterator": {
+            "type": "iterator",
+            "enabled": true
+        }
+    },
+    "ref": "github.com/TIBCOSoftware/TCSTK-GOlang/liveapps/activity/uploadartifact",
+    "settings": [
+        {
+            "name": "security",
+            "type": "string",
+            "required": true,
+            "display": {
+                "name": "Security",
+                "description": "The REST method used for the requests",
+                "type": "dropdown",
+                "selection": "single"
+            },
+            "allowed": [
+                "Cookie",
+                "AccessToken"
+            ],
+            "value": "Cookie"
+        }
+    ],
+    "inputs": [
+        {
+            "name": "region",
+            "type": "string",
+            "required": true,
+            "value": ""
+        },
+        {
+            "name": "cookie",
+            "type": "object",
+            "value": "{\"tsc\": \"tsc cookie value\", \"domain\": \"domain cookie value\"}",
+            "required": false
+        },
+        {
+            "name": "accessToken",
+            "type": "string",
+            "required": false,
+            "visible": false
+        },
+        {
+            "name": "folderName",
+            "type": "string",
+            "required": true
+        },
+        {
+            "name": "artifactName",
+            "type": "string",
+            "required": true
+        },
+        {
+            "name": "sandbox",
+            "type": "string",
+            "required": false
+        },
+        {
+            "name": "description",
+            "type": "string",
+            "required": false
+        },
+        {
+            "name": "artifactContents",
+            "type": "string",
+            "required": true
+        }
+    ],
+    "outputs": [
+        {
+            "name": "statusCode",
+            "type": "number"
+        },
+        {
+            "name": "status",
+            "type": "object",
+            "value": "{\"type\": \"object\",\"properties\": {\"message\": {\"type\": \"string\"}}}"
+        },
+        {
+            "name": "error",
+            "type": "object",
+            "value": "{\"type\": \"object\",\"properties\": {\"errorMsg\": {\"type\": \"string\"},\"errorCode\": {\"type\": \"string\"},\"stactTrace\": {\"type\": \"string\"},\"contextAttribute\": {\"type\": \"array\",\"items\": {\"type\": \"object\",\"properties\": {\"name\": {\"type\": \"string\"},\"value\": {\"type\": \"string\"}}}}}}"
+        }
+    ]
+}
