@@ -13,7 +13,7 @@
        "description": "Activity executes a Javascript from any remote URL location"
     },
  
-    "ref": "github.com/TIBCOSoftware/TCST-GOlang/master/scripting/activity/execjs",
+    "ref": "github.com/TIBCOSoftware/TCSTK-GOlang/scripting/activity/execjs",
     "inputs": [
            {
             "name": "Input",
