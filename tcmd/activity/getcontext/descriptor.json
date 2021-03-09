@@ -1,0 +1,45 @@
+{
+  "name": "getContext",
+  "author": "Manuel Carlos Rodriguez",
+  "version": "1.0.0",
+  "type": "flogo:activity",
+  "title": "Get Context",
+  "display": {
+      "description": "Activities created by TIBCO Labs",
+      "category": "metadata",
+      "visible": true,
+      "smallIcon": "ifttt.png"
+  },
+  "feature": {
+      "iterator": {
+          "type": "iterator",
+          "enabled": true
+      }
+  },
+  "ref": "github.com/TIBCOSoftware/TCSTK-GOlang/tcmd/activity/getcontext",
+  "settings": [],
+  "inputs": [
+      {
+          "name": "region",
+          "type": "string",
+          "required": true,
+          "value": ""
+      },
+      {
+          "name": "accessToken",
+          "type": "string",
+          "required": true,
+          "visible": true
+      }
+  ],
+  "outputs": [
+      {
+          "name": "context1",
+          "type": "string"
+      },
+      {
+        "name": "context2",
+        "type": "string"
+    }
+  ]
+}
