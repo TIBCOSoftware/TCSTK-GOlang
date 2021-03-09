@@ -11,6 +11,7 @@ import (
 	"net/url"
 	"strings"
 
+	"github.com/TIBCOSoftware/TCSTK-common-mods/utils/server"
 	"github.com/project-flogo/core/activity"
 	"github.com/project-flogo/core/data/metadata"
 )
@@ -64,7 +65,8 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 		},
 	}
 
-	req, err := http.NewRequest("GET", "https://eu.metadata.cloud.tibco.com", nil)
+	server := server.GetServer(input.Region, "metadata")
+	req, err := http.NewRequest("GET", server, nil)
 	req.Header.Set("Authorization", "Bearer "+input.AccessToken)
 	resp, err := client.Do(req)
 
