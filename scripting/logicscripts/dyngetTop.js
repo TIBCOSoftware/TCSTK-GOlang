@@ -9,8 +9,6 @@
 *
 */
 
-//console.log("input: " + input);
-
 var arr = JSON.parse(input);
 
 arr.sort(function(a, b) {
