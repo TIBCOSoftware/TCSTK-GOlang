@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Flogo Scripting Extension - Scripttester</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style type="text/css">
+            body {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            #script, #input, #feedback, #log {
+                font-size: small;
+                height: 200px;
+                width: 100%;
+                overflow: scroll;
+            }
+            #log {
+                font-family: 'Courier New', Courier, monospace;
+            }
+            #script {
+                font-size: medium;
+            }
+            button {
+                margin: 0px 5px 10px 15px;
+                width: 100px;
+                padding: 3px;
+                background-color: white;
+                border-color: cornflowerblue;
+                border-radius: 2px;
+                border-style: solid;
+            }
+        </style>
+<body>
+
+    <h3>Flogo Scripting Extension - Scripttester</h3>
+
+    <button onclick="load(filename);">reload</button>
+    <button onclick="run();">run</button>
+    <button onclick="alert('not implemenetd yet');">save</button>
+    <button onclick="clipLink(filename);">copy Scriptlink</button>
+    <br>
+    Script:
+    <textarea id="script"></textarea>
+    Input:
+    <div id="input"></div>
+    <hr>
+    Logger:
+    <div id="log"></div>
+    <hr>
+    Feedback:
+    <div id="feedback"></div>
+
+    <script>
+
+        // *** new Logger
+
+        (function () {
+            if (!console) {
+                console = {};
+            }
+            var old = console.log;
+            var logger = document.getElementById('log');
+            console.log = function (message) {
+                if (typeof message == 'object') {
+                    logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(message) : String(message)) + '<br />';
+                } else {
+                    logger.innerHTML += message + '<br />';
+                }
+            }
+        })();
+
+        // *** script Loader
+
+        function load(filename) {
+            var xmlhttp, text;
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('GET', 'dyngetTop.js', false);
+            xmlhttp.send();
+            document.getElementById("script").value = xmlhttp.responseText;
+        }
+
+        // *** run script
+
+        function run() {
+        document.getElementById("log").innerHTML="";
+
+        var el = document.getElementById('script');
+        el && eval(el.value);
+
+        document.getElementById("feedback").innerHTML=feedback;
+        }
+
+        // *** copy To Clipboard
+
+        function clipLink(text) {
+            var l = window.location;
+            var port ="";
+            if (l.port!="") port = ":" + l.port;
+            var path =l.pathname.substr(0, l.pathname.lastIndexOf("/"));;
+
+            var scriptlink = l.protocol + "//" + l.hostname + port + "" + path + "/" +  text;
+            copyToClipboard(scriptlink)
+        }
+
+        function copyToClipboard(text) {
+            if (window.clipboardData && window.clipboardData.setData) {
+                // IE specific code path to prevent textarea being shown while dialog is visible.
+                return clipboardData.setData("Text", text); 
+
+            } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+                var textarea = document.createElement("textarea");
+                textarea.textContent = text;
+                textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+                } catch (ex) {
+                    console.warn("Copy to clipboard failed.", ex);
+                    return false;
+                } finally {
+                    document.body.removeChild(textarea);
+                }
+            }
+        }
+
+        // *** INIT
+
+        // scriptfile
+        const filename = 'dyngetTop.js';
+
+        //testdata only
+        var input = '[{"caseReference":"4162431","summary":{"EMail":"Kkl@example.com","Nickname":".Kkl.","OverallPoints":2100,"State":"Active"}},{"caseReference":"4162361","summary":{"EMail":"jgrx2@example.com","Nickname":".MrX2y.","OverallPoints":400,"State":"Active"}},{"caseReference":"4161501","summary":{"EMail":"email@example.com","Nickname":".nick.","OverallPoints":1000,"State":"Active"}},{"caseReference":"4159131","summary":{"EMail":"Jsss@example.de","Nickname":".JOSS.","OverallPoints":3900,"State":"Active"}},{"caseReference":"4161291","summary":{"EMail":"Mr22@example.com","Nickname":".Mr22.","OverallPoints":1700,"State":"Active"}},{"caseReference":"4159141","summary":{"EMail":"jgrhh@example.com","Nickname":".HHA.","OverallPoints":2300,"State":"Active"}},{"caseReference":"4159241","summary":{"EMail":"Tco@example.com","Nickname":".Tco.","OverallPoints":500,"State":"Active"}},{"caseReference":"4159161","summary":{"EMail":"Cgre@example.com","Nickname":".cgre.","OverallPoints":5400,"State":"Active"}},{"caseReference":"4159221","summary":{"EMail":"kkoe@example.com","Nickname":".kay.","OverallPoints":0,"State":"Active"}},{"caseReference":"4159211","summary":{"EMail":"kko@example.com","Nickname":".ka.","OverallPoints":0,"State":"Active"}},{"caseReference":"4159151","summary":{"EMail":"rgu@example.com","Nickname":".Ro.","OverallPoints":6700,"State":"Active"}},{"caseReference":"4159201","summary":{"EMail":"rros@example.com","Nickname":".Rero.","OverallPoints":4000,"State":"Active"}},{"caseReference":"4159191","summary":{"EMail":"sparr@example.com","Nickname":".sparr.","OverallPoints":0,"State":"Active"}},{"caseReference":"4159181","summary":{"EMail":"sparr@example.com","Nickname":".sparr.","OverallPoints":0,"State":"Active"}},{"caseReference":"4159171","summary":{"EMail":"emoe@example.com","Nickname":".emoe.","OverallPoints":0,"State":"Active"}},{"caseReference":"4158811","summary":{"EMail":"Jcen@example.com","Nickname":".jcen.","OverallPoints":7000,"State":"Active"}},{"caseReference":"4158931","summary":{"EMail":"jro@example.com","Nickname":".jro.","OverallPoints":3300,"State":"Active"}},{"caseReference":"4157141","summary":{"EMail":"Mry@go.com","Nickname":".MrY.","OverallPoints":7100,"State":"Active"}},{"caseReference":"4158281","summary":{"EMail":"rder@example.com","Nickname":".rder.","OverallPoints":4900,"State":"Active"}},{"caseReference":"4158231","summary":{"EMail":"Nick@example.com","Nickname":".Nick.","OverallPoints":5200,"State":"Active"}},{"caseReference":"4158241","summary":{"EMail":"Email@email.com","Nickname":".Nickname.","OverallPoints":4600,"State":"Active"}},{"caseReference":"4158221","summary":{"EMail":"Hp@example.com","Nickname":".Hug.","OverallPoints":2200,"State":"Active"}},{"caseReference":"4157131","summary":{"EMail":"Tttww@go.com","Nickname":".Tttww.","OverallPoints":5600,"State":"Active"}}]';
+        document.getElementById("input").innerHTML=input;
+
+        //load    
+        load(filename);
+
+    </script>
+
+</body>
+</html>

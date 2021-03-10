@@ -5,7 +5,7 @@
 * in the license file that is distributed with this file.
 *
 * utility.renderJSON($activity[LiveAppsFindCases].caseRefs.cases, false)
-* URI: "https://www.example.com/logicscripts/dyngetTop5.js"
+* URI: "https://www.example.com/logicscripts/dyngetTop.js"
 *
 */
 
@@ -18,7 +18,7 @@ arr.sort(function(a, b) {
 });
 
 var list = arr.slice(0, 5);
-var result = '{"top5":[';
+var result = '{"top":[';
 
 for (var key in list) {
     if (list.hasOwnProperty(key)) {
