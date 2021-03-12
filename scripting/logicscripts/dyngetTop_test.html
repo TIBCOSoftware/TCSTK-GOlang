@@ -75,7 +75,7 @@
         function load(filename) {
             var xmlhttp, text;
             xmlhttp = new XMLHttpRequest();
-            xmlhttp.open('GET', 'dyngetTop.js', false);
+            xmlhttp.open('GET', filename, false);
             xmlhttp.send();
             document.getElementById("script").value = xmlhttp.responseText;
         }
@@ -93,13 +93,13 @@
 
         // *** copy To Clipboard
 
-        function clipLink(text) {
+        function clipLink(filename) {
             var l = window.location;
             var port ="";
             if (l.port!="") port = ":" + l.port;
             var path =l.pathname.substr(0, l.pathname.lastIndexOf("/"));;
 
-            var scriptlink = l.protocol + "//" + l.hostname + port + "" + path + "/" +  text;
+            var scriptlink = l.protocol + "//" + l.hostname + port + "" + path + "/" +  filename;
             copyToClipboard(scriptlink)
         }
 
