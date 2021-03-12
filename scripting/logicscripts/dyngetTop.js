@@ -9,7 +9,11 @@
 *
 */
 
-var arr = JSON.parse(input);
+var all = JSON.parse(input);
+
+var arr = all.filter(function(a) {
+    return a.summary.State == 'Active';
+});
 
 arr.sort(function(a, b) {
     return b.summary.OverallPoints - a.summary.OverallPoints;
