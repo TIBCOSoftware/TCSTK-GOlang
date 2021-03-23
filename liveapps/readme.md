@@ -8,7 +8,7 @@ Have a look on the standard API documentation to get more details about the here
 > Note: the standard Live Apps Flogo Extension that comes with TIBCO Cloud Integration just allows to connect to the same Subscription Live Apps Applications.  
 
 ## Install URL
-to install e.g. the JavaScript Activity use in the Flogo Extension Upload UI:
+to install e.g. the LiveApps Activities use in the Flogo Extension Upload UI:
 
 > github.com/TIBCOSoftware/TCSTK-GOlang/liveapps
 
