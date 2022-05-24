@@ -9,12 +9,14 @@
             body {
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
             }
-            #script, #input, #feedback, #log {
+            #script, #log, #input, #feedback {
                 font-size: small;
-                height: 200px;
-                width: 100%;
+                height: 300px;
+                width: 98%;
                 overflow: scroll;
+				margin: 10px;
             }
+			
             #log {
                 font-family: 'Courier New', Courier, monospace;
             }
@@ -30,26 +32,48 @@
                 border-radius: 2px;
                 border-style: solid;
             }
+			.row {
+			    display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+			}
+			.col {
+				width: 50%;
+				display: flex;
+				flex-direction: column;
+			}
         </style>
 <body>
 
-    <h3>Flogo Scripting Extension - Scripttester</h3>
-
-    <button onclick="load(filename);">reload</button>
-    <button onclick="run();">run</button>
-    <button onclick="alert('not implemenetd yet');">save</button>
-    <button onclick="clipLink(filename);">copy Scriptlink</button>
-    <br>
-    Script:
-    <textarea id="script"></textarea>
-    Input:
-    <div id="input"></div>
-    <hr>
-    Logger:
-    <div id="log"></div>
-    <hr>
-    Feedback:
-    <div id="feedback"></div>
+	<div class="row">
+		<h3>Flogo Scripting Extension - Scripttester</h3>
+	</div>
+	<div class="row">
+		<button onclick="load(filename);">reload</button>
+		<button onclick="run();">run</button>
+		<button onclick="alert('not implemenetd yet');">save</button>
+		<button onclick="clipLink(filename);">copy Scriptlink</button>
+    </div>
+	<div class="row">
+		<div class="col">
+			Script:
+			<textarea id="script"></textarea>
+		</div>
+		<div class="col">
+			Logger:
+			<div id="log"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			Input:
+			<div id="input"></div>
+		</div>
+		<div class="col">
+			Result:
+			<div id="feedback"></div>
+		</div>
+	</div>
 
     <script>
 
