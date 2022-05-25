@@ -1,0 +1,64 @@
+{
+    "name": "urlShortener",
+    "author": "Manuel Carlos Rodriguez",
+    "version": "1.0.0",
+    "type": "flogo:activity",
+    "title": "URL shortener",
+    "display": {
+        "description": "Activities created by TIBCO Labs",
+        "category": "encryption",
+        "visible": true,
+        "smallIcon": "ifttt.png"
+    },
+    "feature": {
+        "iterator": {
+            "type": "iterator",
+            "enabled": true
+        }
+    },
+    "ref": "github.com/TIBCOSoftware/TCSTK-GOlang/encryption/activity/urlshortener",
+    "settings": [
+        {
+            "name": "provider",
+            "type": "text",
+            "required": true,
+            "display": {
+                "name": "Provider",
+                "description": "URL Shortener Provider",
+                "type": "dropdown",
+                "selection": "single"
+            },
+            "allowed": [
+                "Rebrandly",
+                "Bitly",
+                "Google Firebase"
+            ],
+            "value": "Bitly"
+        },
+        {
+            "name": "securityToken",
+            "type": "text",
+            "required": true,
+            "display": {
+                "name": "Token",
+                "description": "Authentication token",
+                "type": "text"
+            },
+            "value": ""
+        }
+    ],
+    "inputs": [
+        {
+            "name": "longDynamicLink",
+            "type": "string",
+            "required": true,
+            "value": ""
+        }
+    ],
+    "outputs": [
+        {
+            "name": "shortLink",
+            "type": "string"
+        }
+    ]
+}
